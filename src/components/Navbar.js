@@ -1,21 +1,35 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Route, useNavigate } from "react-router-dom";
+import Search from "./Search";
 
 import "./Navbar.css";
 export default function Navbar() {
   const [search, setSearch] = useState("");
+  let navigate = useNavigate();
 
-  const handleChange = event => {
+  const redirect = () => {
+    console.log(stringValPatternValidation(search));
+    if (stringValPatternValidation(search)) {
+      navigate("/search/" + search);
+    } else {
+      window.alert("Empty");
+    }
+  };
+
+  const stringValPatternValidation = (stringVal) => {
+    return stringVal !== "";
+  };
+  const handleChange = (event) => {
     setSearch(event.target.value);
   };
 
   return (
     <>
-      <div className="header p-3">
-        <div className="row">
-          <div className="col-1">
+      <div className="header">
+        <div className="row align-items-center">
+          <div className="col-1 p-0">
             <a className="navbar-brand" href="/">
-              Navbar
+              <img src="../img/Logo.png" style={{maxWidth: "100%",objectFit: 'cover'}}/>
             </a>
           </div>
           <div className="col-8">
@@ -28,8 +42,9 @@ export default function Navbar() {
                 value={search}
                 onChange={handleChange}
               />
-              
-              <Link to={`/search/${search}`} className="btn btn-primary">Search</Link>
+              <button type="button" className="button" onClick={redirect}>
+                Search
+              </button>
             </form>
           </div>
           <div className="col-1">

@@ -17,7 +17,6 @@ export default function Category(props) {
           array.push(element);
         });
         setProduct(array);
-        console.log(product);
       });
   }, []);
   return (

@@ -1,7 +1,20 @@
-.nav-link{
-    border-radius: 1rem;
+.nav-link {
+  border-radius: 1rem;
 }
-.nav-link:hover{
-    background-color:rgb(173, 173, 173);
-    color: white!important;
+.nav-link:hover {
+  background-color: rgb(173, 173, 173);
+  color: white !important;
+}
+button {
+  border-radius: 8px;
+  font-size: 1.2rem;
+  -webkit-transition: background-color 0.1s ease-in;
+  -moz-transition: background-color 0.1s ease-in;
+  -o-transition: background-color 0.1s ease-in;
+  transition: background-color 0.1s ease-in;
+}
+button:hover {
+  background-color: #a4a9ad;
+
+  transition-delay: 0.1s;
 }

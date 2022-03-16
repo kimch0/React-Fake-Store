@@ -31,13 +31,13 @@ export default function Search() {
           ) : (
             search.map((el) => (
               <div className="col-4" key={el.id}>
-                <Link to={`/product/${el.id}`}>
+                <Link to={`/product/${el.id}`} className="text-decoration-none">
                   <div className="card">
                     <img className="card-img-top" src={el.image} />
                     <div className="card-body">
                       <h5 className="card-tittle">{el.title}</h5>
                       <ul className="list-group list-group-flush">
-                        <li className="list-group-item">{el.price}</li>
+                        <li className="list-group-item p-0 fs-5">Price: ${el.price}</li>
                       </ul>
                     </div>
                   </div>
