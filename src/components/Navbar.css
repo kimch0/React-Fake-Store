@@ -1,0 +1,7 @@
+.nav-link{
+    border-radius: 1rem;
+}
+.nav-link:hover{
+    background-color:rgb(173, 173, 173);
+    color: white!important;
+}

@@ -1,0 +1,13 @@
+.card{
+    height: 630px;
+}
+.card-img-top {
+    float: left;
+    max-height: 500px;
+    height: 80%;
+    object-fit:scale-down;
+}
+
+.text-decoration-none{
+    color: black;
+}
