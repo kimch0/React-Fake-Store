@@ -4,8 +4,9 @@ import Loading from "./Loading";
 
 export default function Search() {
   const [search, setSearch] = useState(null);
+  const [complete, setComplete] = useState(false);
   const { name } = useParams();
-  let complete = false;
+  // let complete = false;
   console.log(name);
   useEffect(() => {
     let array = [];
@@ -19,35 +20,43 @@ export default function Search() {
           }
         }
         setSearch(array);
-        complete = true;
+        setComplete(true);
       });
-  }, [name]);
+  }, [name,complete]);
 
   return (
     <>
       <div className="container">
         <div className="row">
-          {search === null ? (
-            <Loading />
-            
-          ) : (
-            search.map((el) => (
-              <div className="col-4" key={el.id}>
-                <Link to={`/product/${el.id}`} className="text-decoration-none">
-                  <div className="card">
-                    <img className="card-img-top" src={el.image} />
-                    <div className="card-body">
-                      <h5 className="card-tittle">{el.title}</h5>
-                      <ul className="list-group list-group-flush">
-                        <li className="list-group-item p-0 fs-5">
-                          Price: ${el.price}
-                        </li>
-                      </ul>
-                    </div>
+          {complete === true ? (
+            <>
+              {search === null ? (
+                <p>No hay nada</p>
+              ) : (
+                search.map((el) => (
+                  <div className="col-4" key={el.id}>
+                    <Link
+                      to={`/product/${el.id}`}
+                      className="text-decoration-none"
+                    >
+                      <div className="card">
+                        <img className="card-img-top" src={el.image} />
+                        <div className="card-body">
+                          <h5 className="card-tittle">{el.title}</h5>
+                          <ul className="list-group list-group-flush">
+                            <li className="list-group-item p-0 fs-5">
+                              Price: ${el.price}
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </Link>
                   </div>
-                </Link>
-              </div>
-            ))
+                ))
+              )}
+            </>
+          ) : (
+            <Loading/>
           )}
         </div>
       </div>
