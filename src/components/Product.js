@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './Product.css'
+import Loading from './Loading';
 
 export default function Product() {
   const { id } = useParams();
@@ -18,7 +19,7 @@ export default function Product() {
   return (
     <>
       {product === null ? (
-        <h3>Loading</h3>
+        <Loading/>
       ) : (
         <div className="text-center">
           <div className="center">

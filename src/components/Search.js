@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import Loading from "./Loading";
 
 export default function Search() {
   const [search, setSearch] = useState(null);
@@ -27,7 +28,8 @@ export default function Search() {
       <div className="container">
         <div className="row">
           {search === null ? (
-            <p>Loading</p>
+            <Loading />
+            
           ) : (
             search.map((el) => (
               <div className="col-4" key={el.id}>
@@ -37,7 +39,9 @@ export default function Search() {
                     <div className="card-body">
                       <h5 className="card-tittle">{el.title}</h5>
                       <ul className="list-group list-group-flush">
-                        <li className="list-group-item p-0 fs-5">Price: ${el.price}</li>
+                        <li className="list-group-item p-0 fs-5">
+                          Price: ${el.price}
+                        </li>
                       </ul>
                     </div>
                   </div>

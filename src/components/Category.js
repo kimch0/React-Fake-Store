@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import "./Category.css";
 import Product from "./Product";
-
+import Loading from "./Loading"
 
 
 export default function Category(props) {
@@ -24,7 +24,7 @@ export default function Category(props) {
       <div className="container">
         <div className="row">
           {product === null ? (
-            <p>Loading</p>
+            <Loading/>
           ) : (
             product.map((el) => (
               <div className="col-4 mb-5" key={el.id}>
