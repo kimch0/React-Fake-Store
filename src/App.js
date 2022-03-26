@@ -6,14 +6,19 @@ import About from "./components/About";
 import Category from "./components/Category";
 import Product from "./components/Product";
 import Search from "./components/Search";
+import Login from "./components/Login";
+import Cart from "./components/Cart";
+
 
 function App() {
   return (
     <div className="main">
       <BrowserRouter>
-        <Navbar />
-
+      <Navbar />
         <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/shoppingCart" element={<Cart />} />
+
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/electronics" element={<Category url="electronics" />} />

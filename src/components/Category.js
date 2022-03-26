@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import "./Category.css";
+import Loading from "./Loading";
 import Product from "./Product";
-import Loading from "./Loading"
+
 
 
 export default function Category(props) {

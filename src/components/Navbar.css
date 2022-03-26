@@ -5,7 +5,7 @@
   background-color: rgb(173, 173, 173);
   color: white !important;
 }
-button {
+.button {
   border-radius: 8px;
   font-size: 1.2rem;
   -webkit-transition: background-color 0.1s ease-in;
@@ -13,8 +13,16 @@ button {
   -o-transition: background-color 0.1s ease-in;
   transition: background-color 0.1s ease-in;
 }
-button:hover {
+.button:hover {
   background-color: #a4a9ad;
 
   transition-delay: 0.1s;
+}
+.label{
+  color: blue;
+  text-decoration: underline;
+}
+
+.label:hover{
+  cursor: pointer;
 }

@@ -51,22 +51,11 @@ export default function Home() {
           </button>
         </div>
         <div className="text-center">
-          <h2 className="mt-4 mb-4">Disclaimer</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-            finibus nisl lacinia lacinia ullamcorper. Donec nec ipsum non nisl
-            dignissim euismod. Fusce dapibus enim elit, non efficitur quam
-            semper eget. Mauris euismod semper velit vel cursus. Etiam at magna
-            magna. Class aptent taciti sociosqu ad litora torquent per conubia
-            nostra, per inceptos himenaeos. Nunc vulputate, purus id tincidunt
-            iaculis, dolor urna dignissim ipsum, id pellentesque ante velit
-            interdum lorem. Maecenas nec iaculis enim. Suspendisse luctus dolor
-            id blandit imperdiet. Pellentesque habitant morbi tristique senectus
-            et netus et malesuada fames ac turpis egestas. Suspendisse rutrum
-            ultrices risus eu vestibulum. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Aenean nulla turpis, suscipit non
-            efficitur consequat, tempus non massa. Etiam feugiat odio ipsum,
-            quis convallis enim interdum eget.
+          <h2 className="mt-4 mb-4">Note</h2>
+          <p className="fs-3">
+            This is not a commercial web page, it was created to demostrate the
+            use of the Javascript library React. The data is taken from a public API
+            called FakeStoreAPI.
           </p>
         </div>
       </div>

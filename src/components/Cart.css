@@ -1,0 +1,6 @@
+.img-fluid{
+    width: 200px;
+    object-fit:scale-down;
+    height: 100%;
+    
+}

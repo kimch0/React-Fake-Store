@@ -1,20 +1,40 @@
-import React, { useState } from "react";
-import { Link, Route, useNavigate } from "react-router-dom";
-import Search from "./Search";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 import "./Navbar.css";
 export default function Navbar() {
   const [search, setSearch] = useState("");
+  const [auth, setAuth] = useState(false);
+  const [user, setUser] = useState({});
   let navigate = useNavigate();
+
+  useEffect(() => {
+    if (sessionStorage.getItem("user") !== null) {
+      setUser(JSON.parse(window.sessionStorage.getItem("user")));
+      setAuth(true);
+      
+    }
+  }, []);
 
   const redirect = () => {
     console.log(stringValPatternValidation(search));
     if (stringValPatternValidation(search)) {
       navigate("/search/" + search);
-    } else {
-      window.alert("Empty");
     }
   };
+
+  const keyHandler = (e) => {
+    if (e.key === "Enter") {
+      redirect();
+    }
+  };
+
+  const logout = () => {
+    window.sessionStorage.removeItem("user");
+    sessionStorage.clear();
+    window.location.reload();
+  }
 
   const stringValPatternValidation = (stringVal) => {
     return stringVal !== "";
@@ -29,11 +49,14 @@ export default function Navbar() {
         <div className="row align-items-center">
           <div className="col-1 p-0">
             <a className="navbar-brand" href="/">
-              <img src="../img/Logo.png" style={{maxWidth: "100%",objectFit: 'cover'}}/>
+              <img
+                src="../img/Logo.png"
+                style={{ maxWidth: "100%", objectFit: "cover" }}
+              />
             </a>
           </div>
           <div className="col-8">
-            <form className="d-flex">
+            <form className="d-flex" onKeyPress={(e) => keyHandler(e)}>
               <input
                 className="form-control me-2"
                 type="search"
@@ -47,17 +70,35 @@ export default function Navbar() {
               </button>
             </form>
           </div>
-          <div className="col-1">
-            <a>Log in</a>
-          </div>
-          <div className="col-1">
-            <a>Sign up</a>
-          </div>
-          <div className="col-1">
-            <a>Icon</a>
+          <div className="col-3 d-flex justify-content-evenly p-0">
+            <div className="w-100">
+              {auth ? (
+                <div className="w-100 d-flex justify-content-evenly" >
+                  <a>
+                    Welcome{" "}
+                    {user.name.firstname.charAt(0).toUpperCase() +
+                      user.name.firstname.slice(1)} {' '}
+                  </a>
+                  <label onClick={logout} className='label'>Logout</label>
+                </div>
+              ) : (
+                <div className="w-100 text-center">
+                <a href="/login">Log in</a>
+                </div>
+              )}
+            </div>
+            <div className="me-4">
+              <a href="/shoppingCart">
+                <img
+                  src="../img/shoppingCart.jpg"
+                  style={{ maxWidth: "25px" }}
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
+
       <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5">
         <div className="container-fluid">
           <button
