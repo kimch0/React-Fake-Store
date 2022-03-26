@@ -90,7 +90,7 @@ export default function Navbar() {
             <div className="me-4">
               <a href="/shoppingCart">
                 <img
-                  src="./React-Fake-Store/img/shoppingCart.jpg"
+                  src="./public/img/shoppingCart.jpg"
                   style={{ maxWidth: "25px" }}
                 />
               </a>
