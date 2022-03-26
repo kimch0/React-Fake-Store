@@ -13,16 +13,16 @@ export default function Home() {
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img
-                src="img/lavadoras.webp"
+                src="./React-Fake-Store/img/lavadoras.webp"
                 className="d-block w-100"
-                alt="..."
+                alt="Washing Machines"
               />
             </div>
             <div className="carousel-item">
-              <img src="img/pulsera.jpg" className="d-block w-100" alt="..." />
+              <img src="./React-Fake-Store/img/pulsera.jpg" className="d-block w-100" alt="Bracelet" />
             </div>
             <div className="carousel-item">
-              <img src="img/reloj.jpg" className="d-block w-100" alt="..." />
+              <img src="./React-Fake-Store/img/reloj.jpg" className="d-block w-100" alt="Watch" />
             </div>
           </div>
           <button

@@ -50,7 +50,7 @@ export default function Navbar() {
           <div className="col-1 p-0">
             <a className="navbar-brand" href="/">
               <img
-                src="../img/Logo.png"
+                src="./React-Fake-Store/img/Logo.png"
                 style={{ maxWidth: "100%", objectFit: "cover" }}
               />
             </a>
@@ -90,7 +90,7 @@ export default function Navbar() {
             <div className="me-4">
               <a href="/shoppingCart">
                 <img
-                  src="../img/shoppingCart.jpg"
+                  src="./React-Fake-Store/img/shoppingCart.jpg"
                   style={{ maxWidth: "25px" }}
                 />
               </a>
