@@ -114,22 +114,22 @@ export default function Navbar() {
           </button>
           <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
             <div className="navbar-nav d-flex justify-content-around w-100">
-              <a className="nav-link p-2 fs-5" aria-current="page" href="/">
+              <a className="nav-link p-2 fs-5" aria-current="page" href="/React-Fake-Store/">
                 Home
               </a>
-              <a className="nav-link p-2 fs-5" href="/electronics">
+              <a className="nav-link p-2 fs-5" href="/React-Fake-Store/electronics">
                 Electronics
               </a>
-              <a className="nav-link p-2 fs-5" href="/jewelery">
+              <a className="nav-link p-2 fs-5" href="/React-Fake-Store/jewelery">
                 Jewelery
               </a>
-              <a className="nav-link p-2 fs-5" href="/men's_clothing">
+              <a className="nav-link p-2 fs-5" href="/React-Fake-Store/men's_clothing">
                 Men's Clothing
               </a>
-              <a className="nav-link p-2 fs-5" href="/women's_clothing">
+              <a className="nav-link p-2 fs-5" href="/React-Fake-Store/women's_clothing">
                 Women's Clothing
               </a>
-              <a className="nav-link p-2 fs-5" href="/about">
+              <a className="nav-link p-2 fs-5" href="/React-Fake-Store/about">
                 About
               </a>
             </div>

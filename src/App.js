@@ -18,9 +18,8 @@ function App() {
         <Routes>
           <Route path="/React-Fake-Store/login" element={<Login />} />
           <Route path="/React-Fake-Store/shoppingCart" element={<Cart />} />
-
           <Route path="/React-Fake-Store/" element={<Home />} />
-          <Route path="/React-Fake-Store/about" element={<About />} />
+          <Route path="/about" element={<About />} />
           <Route path="/React-Fake-Store/electronics" element={<Category url="electronics" />} />
           <Route path="/React-Fake-Store/jewelery" element={<Category url="jewelery" />} />
           <Route
