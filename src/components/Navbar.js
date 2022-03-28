@@ -48,7 +48,7 @@ export default function Navbar() {
       <div className="header">
         <div className="row align-items-center">
           <div className="col-1 p-0">
-            <a className="navbar-brand" href="/">
+            <a className="navbar-brand" href="/React-Fake-Store/">
               <img
                 src="./img/Logo.png"
                 style={{ maxWidth: "100%", objectFit: "cover" }}
@@ -126,10 +126,10 @@ export default function Navbar() {
               <a className="nav-link p-2 fs-5" href="/React-Fake-Store/men's_clothing">
                 Men's Clothing
               </a>
-              <a className="nav-link p-2 fs-5" href="/React-Fake-Store/women's_clothing">
+              <a className="nav-link p-2 fs-5" href={window.location.origin+"/React-Fake-Store/women's_clothing"}>
                 Women's Clothing
               </a>
-              <a className="nav-link p-2 fs-5" href="/React-Fake-Store/about">
+              <a className="nav-link p-2 fs-5" href={window.location.origin+"/React-Fake-Store/about" }>
                 About
               </a>
             </div>

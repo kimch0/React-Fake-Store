@@ -9,31 +9,37 @@ import Search from "./components/Search";
 import Login from "./components/Login";
 import Cart from "./components/Cart";
 
-
 function App() {
   return (
     <div className="main">
-      <BrowserRouter>
-      <Navbar />
+      <BrowserRouter basename="/Reack-Fake-Store">
+        <Navbar />
         <Routes>
-          <Route path="/React-Fake-Store/login" element={<Login />} />
-          <Route path="/React-Fake-Store/shoppingCart" element={<Cart />} />
-          <Route path="/React-Fake-Store/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/React-Fake-Store/electronics" element={<Category url="electronics" />} />
-          <Route path="/React-Fake-Store/jewelery" element={<Category url="jewelery" />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/shoppingCart" element={<Cart />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about"  element={<About />} />
           <Route
-            path="/React-Fake-Store/men's_clothing"
+            path="/electronics"
+            
+            element={<Category url="electronics" />}
+          />
+          <Route
+            path="/jewelery"
+            element={<Category url="jewelery" />}
+          />
+          <Route
+            path="/men's_clothing"
             element={<Category url="men's clothing" />}
           />
           <Route
-            path="/React-Fake-Store/women's_clothing"
+            path="/women's_clothing"
             element={<Category url="women's clothing" />}
           />
-          <Route path="/React-Fake-Store/product" element={<Product />}>
+          <Route path="/product" element={<Product />}>
             <Route path=":id" element={<Product />} />
           </Route>
-          <Route path="/React-Fake-Store/search" element={<Search />}>
+          <Route path="/search" element={<Search />}>
             <Route path=":name" element={<Search />} />
           </Route>
         </Routes>
