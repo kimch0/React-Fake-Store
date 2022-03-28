@@ -12,7 +12,7 @@ import Cart from "./components/Cart";
 function App() {
   return (
     <div className="main">
-      <BrowserRouter basename="/Reack-Fake-Store">
+      <BrowserRouter basename="/React-Fake-Store">
         <Navbar />
         <Routes>
           <Route path="/login" element={<Login />} />
