@@ -1,23 +1,19 @@
 import "./App.css";
-import Home from "./components/Home";
+
 import Navbar from "./components/Navbar";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import About from "./components/About";
-import Category from "./components/Category";
-import Product from "./components/Product";
-import Search from "./components/Search";
-import Login from "./components/Login";
-import Cart from "./components/Cart";
+import Home from "./components/Home";
 
 function App() {
   return (
     <div className="main">
-      <BrowserRouter basename="/React-Fake-Store">
+      
         <Navbar />
-        <Routes>
-          <Route path="/login" element={<Login />} />
+
+        <Home/>
+
+          {/* <Route path="/login" element={<Login />} />
           <Route path="/shoppingCart" element={<Cart />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" index element={<Home />} />
           <Route path="/about"  element={<About />} />
           <Route
             path="/electronics"
@@ -41,9 +37,8 @@ function App() {
           </Route>
           <Route path="/search" element={<Search />}>
             <Route path=":name" element={<Search />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+          </Route> */}
+        
     </div>
   );
 }

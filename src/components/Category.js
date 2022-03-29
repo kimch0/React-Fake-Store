@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Outlet, Route, Routes } from "react-router-dom";
 import "./Category.css";
 import Loading from "./Loading";
 import Product from "./Product";
@@ -44,6 +44,7 @@ export default function Category(props) {
             ))
           )}
         </div>
+        <Outlet/>
       </div>
     </>
   );

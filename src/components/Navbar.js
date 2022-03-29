@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 
 import "./Navbar.css";
 export default function Navbar() {
@@ -13,9 +12,8 @@ export default function Navbar() {
     if (sessionStorage.getItem("user") !== null) {
       setUser(JSON.parse(window.sessionStorage.getItem("user")));
       setAuth(true);
-      
     }
-  }, []);
+  }, [window.location]);
 
   const redirect = () => {
     console.log(stringValPatternValidation(search));
@@ -34,7 +32,7 @@ export default function Navbar() {
     window.sessionStorage.removeItem("user");
     sessionStorage.clear();
     window.location.reload();
-  }
+  };
 
   const stringValPatternValidation = (stringVal) => {
     return stringVal !== "";
@@ -73,17 +71,19 @@ export default function Navbar() {
           <div className="col-3 d-flex justify-content-evenly p-0">
             <div className="w-100">
               {auth ? (
-                <div className="w-100 d-flex justify-content-evenly" >
+                <div className="w-100 d-flex justify-content-evenly">
                   <a>
                     Welcome{" "}
                     {user.name.firstname.charAt(0).toUpperCase() +
-                      user.name.firstname.slice(1)} {' '}
+                      user.name.firstname.slice(1)}{" "}
                   </a>
-                  <label onClick={logout} className='label'>Logout</label>
+                  <label onClick={logout} className="label">
+                    Logout
+                  </label>
                 </div>
               ) : (
                 <div className="w-100 text-center">
-                <a href="/login">Log in</a>
+                  <a href="/login">Log in</a>
                 </div>
               )}
             </div>
@@ -114,24 +114,24 @@ export default function Navbar() {
           </button>
           <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
             <div className="navbar-nav d-flex justify-content-around w-100">
-              <a className="nav-link p-2 fs-5" aria-current="page" href="/React-Fake-Store/">
+              <Link to="/" className="nav-link p-2 fs-5">
                 Home
-              </a>
-              <a className="nav-link p-2 fs-5" href="/React-Fake-Store/electronics">
+              </Link>
+              <Link to="/electronics" className="nav-link p-2 fs-5">
                 Electronics
-              </a>
-              <a className="nav-link p-2 fs-5" href="/React-Fake-Store/jewelery">
+              </Link>
+              <Link className="nav-link p-2 fs-5" to="/jewelery">
                 Jewelery
-              </a>
-              <a className="nav-link p-2 fs-5" href="/React-Fake-Store/men's_clothing">
+              </Link>
+              <Link className="nav-link p-2 fs-5" to="/men's_clothing">
                 Men's Clothing
-              </a>
-              <a className="nav-link p-2 fs-5" href={window.location.origin+"/React-Fake-Store/women's_clothing"}>
+              </Link>
+              <Link className="nav-link p-2 fs-5" to="/women's_clothing">
                 Women's Clothing
-              </a>
-              <a className="nav-link p-2 fs-5" href={window.location.origin+"/React-Fake-Store/about" }>
+              </Link>
+              <Link className="nav-link p-2 fs-5" to="/about">
                 About
-              </a>
+              </Link>
             </div>
           </div>
         </div>
