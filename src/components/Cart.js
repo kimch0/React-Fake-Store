@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import Loading from "./Loading";
 import "./Cart.css";
 import { deleteCar } from "../hooks/deleteCar";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
   const [carList, setCarList] = useState([]);
   const [complete, setComplete] = useState(false);
   const [total, setTotal] = useState(0.0);
+
+  let navigate = useNavigate();
 
   const products = JSON.parse(window.sessionStorage.getItem("product"));
   const userInfo = JSON.parse(window.sessionStorage.getItem("user"));
@@ -34,7 +37,7 @@ export default function Cart() {
   const purchase = () => {
     sessionStorage.removeItem("product");
     alert('Purchase complete.')
-    window.location.reload();
+    navigate('/shoppingCart')
   }
 
   return (
