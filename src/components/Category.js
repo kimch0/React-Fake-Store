@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Link, Outlet, Route, Routes } from "react-router-dom";
+import React, { useEffect,  useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 import "./Category.css";
 import Loading from "./Loading";
-import Product from "./Product";
-
-
 
 export default function Category(props) {
   const [product, setProduct] = useState(null);
@@ -19,32 +16,37 @@ export default function Category(props) {
         });
         setProduct(array);
       });
-  }, []);
+  }, [props]);
+
+
+
   return (
     <>
       <div className="container">
         <div className="row">
           {product === null ? (
-            <Loading/>
+            <Loading />
           ) : (
             product.map((el) => (
               <div className="col-4 mb-5" key={el.id}>
-                <Link to={`/product/${el.id}`} className="text-decoration-none" >
+                <Link to={`/product/${el.id}`} className="text-decoration-none">
                   <div className="card">
-                    <img className="card-img-top" src={el.image} />
+                    <img className="card-img-top" src={el.image} alt={el.title} />
                     <div className="card-body">
                       <h5 className="card-tittle ">{el.title}</h5>
                       <ul className="list-group list-group-flush">
-                        <li className="list-group-item ps-0 fs-5 ">Price: ${el.price}</li>
+                        <li className="list-group-item ps-0 fs-5 ">
+                          Price: ${el.price}
+                        </li>
                       </ul>
                     </div>
                   </div>
-                  </Link>
+                </Link>
               </div>
             ))
           )}
         </div>
-        <Outlet/>
+        <Outlet />
       </div>
     </>
   );

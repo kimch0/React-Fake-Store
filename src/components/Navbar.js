@@ -13,7 +13,7 @@ export default function Navbar() {
       setUser(JSON.parse(window.sessionStorage.getItem("user")));
       setAuth(true);
     }
-  }, [window.location]);
+  }, []);
 
   const redirect = () => {
     console.log(stringValPatternValidation(search));
@@ -50,6 +50,7 @@ export default function Navbar() {
               <img
                 src="./img/Logo.png"
                 style={{ maxWidth: "100%", objectFit: "cover" }}
+                alt="Shopping Logo"
               />
             </a>
           </div>
@@ -72,28 +73,40 @@ export default function Navbar() {
             <div className="w-100">
               {auth ? (
                 <div className="w-100 d-flex justify-content-evenly">
-                  <a>
+                  <p>
                     Welcome{" "}
                     {user.name.firstname.charAt(0).toUpperCase() +
                       user.name.firstname.slice(1)}{" "}
-                  </a>
+                  </p>
                   <label onClick={logout} className="label">
                     Logout
                   </label>
                 </div>
               ) : (
-                <div className="w-100 text-center">
-                  <a href="/login">Log in</a>
+                <div className="text-center">
+                  <Link to="/login" className="w-100">
+                    Log in
+                  </Link>
                 </div>
+                // <div className="w-100 text-center">
+                //   <a href="/login">Log in</a>
+                // </div>
               )}
             </div>
             <div className="me-4">
-              <a href="/shoppingCart">
+              <Link to="/shoppingCart">
+                <img
+                  src="./img/shoppingCart.jpg"
+                  style={{ maxWidth: "25px" }}
+                  alt="Shopping Cart"
+                />
+              </Link>
+              {/* <a href="/shoppingCart">
                 <img
                   src="./img/shoppingCart.jpg"
                   style={{ maxWidth: "25px" }}
                 />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

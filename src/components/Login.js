@@ -7,7 +7,7 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [complete, setComplete] = useState(false);
-  const [auth, setAuth] = useState(false);
+  
   let navigate = useNavigate();
   useEffect(() => {
     let array = [];
@@ -54,14 +54,14 @@ export default function Login() {
         };
       }
       const data = await fetchResponse.json();
-      setAuth(true);
+    
       if (data !== null) {
         for (let i = 0; userList.length; i++) {
           if (userList[i].username === username) {
             let user = userList[i];
             window.sessionStorage.setItem("user", JSON.stringify(user));
+            navigate('/')
             window.location.reload();
-            window.location.href = window.location.origin;
           }
         }
       }
