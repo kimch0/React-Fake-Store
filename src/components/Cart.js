@@ -37,7 +37,8 @@ export default function Cart() {
   const purchase = () => {
     sessionStorage.removeItem("product");
     alert('Purchase complete.')
-    navigate('/shoppingCart')
+    navigate('/')
+    window.location.reload();
   }
 
   return (
