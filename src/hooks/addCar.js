@@ -15,7 +15,6 @@ export const addCar = (product, quantity) => {
   };
 
   if (list.length === 0) {
-    console.log("aqui que paso");
     list.push(obj);
     window.sessionStorage.setItem("product", JSON.stringify(list));
   } else {

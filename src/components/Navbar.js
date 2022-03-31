@@ -24,7 +24,7 @@ export default function Navbar() {
 
   const keyHandler = (e) => {
     if (e.key === "Enter") {
-      redirect();
+      e.preventDefault();
     }
   };
 

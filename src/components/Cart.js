@@ -77,7 +77,7 @@ export default function Cart() {
                     <h4 className="card-title mb-3 mt-3">{el.title}</h4>
                     <h5 className="mb-3">Price: ${el.price}</h5>
                     <h5 className="mb-3">Quantity: {el.quantity}</h5>
-                    <button onClick={(e) => delCar(el.id)}>Quitar</button>
+                    <button onClick={(e) => delCar(el.id)}><img src="./img/trashIcon.png" id="trashCan"></img></button>
                   </div>
                 </div>
               </div>

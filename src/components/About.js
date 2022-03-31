@@ -10,6 +10,7 @@ export default function About() {
           <li>React.js v17.0.x</li>
           <li>React Router v6.2.x </li>
           <li>Bootstrap v5.1</li>
+          <li>API: <a href="https://fakestoreapi.com/">https://fakestoreapi.com/</a></li>
         </ul>
         <h3>Extra</h3>
         <p className="fs-5">
