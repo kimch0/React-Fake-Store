@@ -26,3 +26,54 @@
 .label:hover{
   cursor: pointer;
 }
+
+.imgLogo{
+  max-width: 100%;
+  object-fit: cover;
+}
+
+#searchDiv2{
+  margin-top: 2%;
+  width: 100%;
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .navbar-brand{
+    padding: 0%;
+    margin-right: 0%;
+  }
+  
+  .cartDiv{
+    margin-right: 5%!important;
+  }
+
+  .welcomeParagraph{
+    font-size: 0.9rem;
+  }
+  .label{
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width:592px){
+  #searchDiv1{
+    display: none;
+  }
+  #searchDiv2{
+    display: inline;
+  }
+  #headerDiv{
+    justify-content: space-between;
+  }
+  #logoCol{
+    width: 30%;
+  }
+  #loginCol{
+    width: 70%;
+  }
+  .imgLogo{
+    max-width: 110%;
+    object-fit: fill;
+  }
+}

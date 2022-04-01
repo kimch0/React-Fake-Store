@@ -1,3 +1,17 @@
 .carousel-inner img {
   height: 45rem;
 }
+
+@media (max-width: 900px) {
+  .carousel-inner img {
+    height: 25rem;
+  }
+}
+@media (max-width: 592px) {
+  .carousel-inner img {
+    height: 10rem;
+  }
+  #noteParagraph{
+    font-size: 16px!important;
+  }
+}

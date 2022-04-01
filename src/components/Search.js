@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Loading from "./Loading";
+import "./Search.css"
 
 export default function Search() {
   const [search, setSearch] = useState(null);
   const [complete, setComplete] = useState(false);
   const { name } = useParams();
-
+  
   useEffect(() => {
+  
     let array = [];
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
@@ -20,7 +22,8 @@ export default function Search() {
         setSearch(array);
         setComplete(true);
       });
-  }, [name, complete]);
+  }, [name]);
+
 
   return (
     <>
@@ -35,7 +38,7 @@ export default function Search() {
             <h2>There was no result!</h2>
           ) : (
             search.map((el) => (
-              <div className="col-4 mb-5" key={el.id}>
+              <div className="col-lg-4 mb-5" key={el.id}>
                 <Link to={`/product/${el.id}`} className="text-decoration-none">
                   <div className="card">
                     <img

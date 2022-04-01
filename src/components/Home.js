@@ -52,7 +52,7 @@ export default function Home() {
         </div>
         <div className="text-center">
           <h2 className="mt-4 mb-4">Note</h2>
-          <p className="fs-3">
+          <p className="fs-3" id="noteParagraph">
             This is not a commercial web page, it was created to demostrate the
             use of the Javascript library React. The data is taken from a public API
             called FakeStoreAPI.

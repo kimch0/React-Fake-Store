@@ -28,7 +28,7 @@ export default function Category(props) {
             <Loading />
           ) : (
             product.map((el) => (
-              <div className="col-4 mb-5" key={el.id}>
+              <div className="col-lg-4 mb-5" key={el.id}>
                 <Link to={`/product/${el.id}`} className="text-decoration-none">
                   <div className="card">
                     <img className="card-img-top" src={el.image} alt={el.title} />

@@ -4,7 +4,7 @@ import "./About.css";
 export default function About() {
   return (
     <>
-      <div className="container w-25 text-center">
+      <div className="container w-50 text-center" id="aboutDiv">
         <h3>Used Complements</h3>
         <ul>
           <li>React.js v17.0.x</li>

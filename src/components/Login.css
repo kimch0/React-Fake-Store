@@ -1,0 +1,13 @@
+
+@media (max-width: 1050px) {
+    #userForms{
+        width: 100%!important;
+    }
+    
+    #infoUsers{
+        width: 100%!important;
+    }
+    div.w-50 h5{
+        font-size: 0.9rem;
+    }
+}

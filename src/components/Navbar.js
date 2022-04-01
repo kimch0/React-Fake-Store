@@ -16,7 +16,6 @@ export default function Navbar() {
   }, []);
 
   const redirect = () => {
-    console.log(stringValPatternValidation(search));
     if (stringValPatternValidation(search)) {
       navigate("/search/" + search);
     }
@@ -44,17 +43,17 @@ export default function Navbar() {
   return (
     <>
       <div className="header">
-        <div className="row align-items-center">
-          <div className="col-1 p-0">
+        <div className="row align-items-center" id="headerDiv">
+          <div className="col-lg-1 col-sm-2 col-2 p-0" id="logoDiv">
             <a className="navbar-brand" href="/React-Fake-Store/">
               <img
                 src="./img/Logo.png"
-                style={{ maxWidth: "100%", objectFit: "cover" }}
+                className="imgLogo"
                 alt="Shopping Logo"
               />
             </a>
           </div>
-          <div className="col-8">
+          <div className="col-lg-8 col-sm-6 col-4" id="searchDiv1">
             <form className="d-flex" onKeyPress={(e) => keyHandler(e)}>
               <input
                 className="form-control me-2"
@@ -69,31 +68,31 @@ export default function Navbar() {
               </button>
             </form>
           </div>
-          <div className="col-3 d-flex justify-content-evenly p-0">
+          <div
+            className="col-lg-3 col-sm-4 col-4  d-flex justify-content-evenly p-0"
+            id="loginCol"
+          >
             <div className="w-100">
               {auth ? (
-                <div className="w-100 d-flex justify-content-evenly">
-                  <p>
+                <div className="w-100 d-flex justify-content-evenly ">
+                  <p className="welcomeParagraph text-center mb-0">
                     Welcome{" "}
                     {user.name.firstname.charAt(0).toUpperCase() +
                       user.name.firstname.slice(1)}{" "}
                   </p>
-                  <label onClick={logout} className="label">
+                  <label onClick={logout} className="label text-center">
                     Logout
                   </label>
                 </div>
               ) : (
                 <div className="text-center">
-                  <Link to="/login" className="w-100">
+                  <Link to="/login" className="w-100 text-center">
                     Log in
                   </Link>
                 </div>
-                // <div className="w-100 text-center">
-                //   <a href="/login">Log in</a>
-                // </div>
               )}
             </div>
-            <div className="me-4">
+            <div className="me-4 cartDiv">
               <Link to="/shoppingCart">
                 <img
                   src="./img/shoppingCart.jpg"
@@ -101,12 +100,6 @@ export default function Navbar() {
                   alt="Shopping Cart"
                 />
               </Link>
-              {/* <a href="/shoppingCart">
-                <img
-                  src="./img/shoppingCart.jpg"
-                  style={{ maxWidth: "25px" }}
-                />
-              </a> */}
             </div>
           </div>
         </div>
@@ -148,6 +141,21 @@ export default function Navbar() {
             </div>
           </div>
         </div>
+        <div id="searchDiv2">
+            <form className="d-flex" onKeyPress={(e) => keyHandler(e)}>
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                value={search}
+                onChange={handleChange}
+              />
+              <button type="button" className="button" onClick={redirect}>
+                Search
+              </button>
+            </form>
+          </div>
       </nav>
     </>
   );

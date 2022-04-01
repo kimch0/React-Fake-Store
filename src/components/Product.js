@@ -37,7 +37,7 @@ export default function Product() {
         <Loading/>
       ) : (
         <div className="text-center">
-          <div className="center">
+          <div className="center" id="productImg">
           <img
             src={product.image}
             className="img-fluid"
@@ -45,11 +45,11 @@ export default function Product() {
             style={{ maxHeight: "500px" }}
           />
           </div>
-          <div className="w-50 center">
+          <div className="w-50 center" id="productInfo">
             <h2>{product.title}</h2>
-            <h3 className="fs-5 mt-3 mb-3 fw-normal">{product.description}</h3>
+            <h3 className="fs-5 mt-3 mb-3 fw-normal" id="productDescription">{product.description}</h3>
             <h4>Price: ${product.price}</h4>
-            <label>{quantity}</label> <br/>
+            <label>Amount: {quantity}</label> <br/>
             <button className="border border-dark rounded m-2" onClick={addNum} style={{width: "40px"}}>+</button>
             <button className="border border-dark rounded m-2" onClick={subNum} style={{width: "40px"}}>-</button>
             <br/>

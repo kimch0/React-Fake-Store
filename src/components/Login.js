@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loading from "./Loading";
+import "./Login.css"
 
 export default function Login() {
   const [userList, setUserList] = useState([]);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [complete, setComplete] = useState(false);
-  
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+
   let navigate = useNavigate();
   useEffect(() => {
     let array = [];
@@ -26,6 +28,7 @@ export default function Login() {
     if (sessionStorage.getItem("user") !== null) {
       window.location.href = window.location.origin;
     }
+    
   }, []);
 
   const authData = async () => {
@@ -54,13 +57,13 @@ export default function Login() {
         };
       }
       const data = await fetchResponse.json();
-    
+
       if (data !== null) {
         for (let i = 0; userList.length; i++) {
           if (userList[i].username === username) {
             let user = userList[i];
             window.sessionStorage.setItem("user", JSON.stringify(user));
-            navigate('/')
+            navigate("/");
             window.location.reload();
           }
         }
@@ -82,7 +85,7 @@ export default function Login() {
 
   return (
     <>
-      <div className="container w-25 d-flex flex-column mb-5 ">
+      <div className="container w-50 d-flex flex-column mb-5 " id="userForms">
         <label>Username</label>
         <input
           value={username}
@@ -107,7 +110,7 @@ export default function Login() {
         </button>
       </div>
 
-      <div className="w-50 container text-center mb-5">
+      <div className="w-100 container text-center mb-5" id="noteDiv">
         <h3>Note</h3>
         <p>
           Unfurtunately, you can't create your own user, but you can use any of
@@ -121,7 +124,7 @@ export default function Login() {
         ) : userList.length === 0 ? (
           <h2>There was no result!</h2>
         ) : (
-          <div className="container w-50 text-center">
+          <div className="container w-75 text-center" id="infoUsers">
             <label className="w-50 fs-3">Username</label>
             <label className="w-50 fs-3">Password</label>
             <hr />

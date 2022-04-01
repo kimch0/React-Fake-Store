@@ -7,3 +7,31 @@
 #trashCan{
     width: 25px;
 }
+
+
+@media (max-width: 1050px) {
+    #productInfoDiv{
+        padding: 0%!important;
+        margin-left: 7%!important;
+        margin-right: 7%!important;
+    }
+}
+
+@media (max-width: 600px) {
+    #productInfoDiv{
+        
+        margin-left: 3%!important;
+        margin-right: 3%!important;
+        padding-bottom: 1%!important;
+    }
+    #total{
+        font-size: 1.2rem;
+    }
+    #totalDiv{
+        flex-direction: column;
+        align-items: center;
+    }
+    #card{
+        width: 100%!important;
+    }
+}
